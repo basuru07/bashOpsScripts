@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -s "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"|grep -o '"usd":[0-9.]*'|cut -d: -f2|tr -d ' '

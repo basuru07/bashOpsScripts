@@ -1,18 +1,28 @@
 # The Phantom C Compiler
 
-You are given a hidden C source file named `phantom.c` located somewhere in the project (most likely in `src/` or root).
+There is a hidden C source file named `phantom.c` somewhere in the project (could be in `src/`, root, or any subdirectory).
 
-Your task is to write a Bash script called `execute.sh` that:
+## Your Task
 
-## Must Do
+Write a single Bash script called `execute.sh` that:
 
-1. Compile the file `phantom.c` into a working executable
-2. Place the final executable inside the folder `./out/`
-3. Name the executable `phantom` (or `phantom.exe` on Windows)
-4. The compiled program must:
-   - Print exactly these two lines when run:
+* Finds the file `phantom.c` no matter where it is
+* Compiles it into an executable named `phantom` (or `phantom.exe` on Windows)
+* Places the executable in the `out/` directory
+* The compiled program must print exactly these two lines when run:
 
 ```
 Greetings from the phantom realm!
 The compilation was successful.
 ```
+
+* Must recompile every time the script is run (even if source didn't change)
+* Must work on both Linux and Windows runners
+* Must use a proper C compiler (`gcc`, `clang`, or `cc`)
+
+## Requirements
+
+* The script must perform a recursive search to locate `phantom.c`
+* Compilation must produce a working executable in the `out/` directory
+* Output format must match exactly (no extra spaces, newlines, or text)
+* No caching or skipping compilation — always recompile on each run
